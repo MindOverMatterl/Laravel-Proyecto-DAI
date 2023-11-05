@@ -14,10 +14,11 @@ return new class extends Migration
         Schema::create('libros', function (Blueprint $table) {
             $table->id();
             $table->string('titulo');
-            $table->string('autor');
+            $table->unsignedBigInteger('autor_id'); 
             $table->string('genero');
             $table->integer('anio_publicacion');
             $table->timestamps();
+            $table->foreign('autor_id')->references('id')->on('autores');
         });
     }
 

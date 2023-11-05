@@ -14,7 +14,9 @@ return new class extends Migration
         Schema::create('prestamos', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('libro_id');
+            $table->foreign('libro_id')->references('id')->on('libros');
             $table->unsignedBigInteger('miembro_id');
+            $table->foreign('miembro_id')->references('id')->on('miembros_biblioteca');
             $table->date('fecha_prestamo');
             $table->date('fecha_devolucion');
             $table->timestamps();

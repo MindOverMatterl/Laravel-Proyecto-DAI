@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('miembros_de_biblioteca', function (Blueprint $table) {
+        Schema::create('miembros_biblioteca', function (Blueprint $table) {
             $table->id();
             $table->string('nombre');
             $table->string('direccion');
@@ -21,7 +21,7 @@ return new class extends Migration
             $table->timestamps();
         });
     }
-
+    
     /**
      * Reverse the migrations.
      */
@@ -29,4 +29,5 @@ return new class extends Migration
     {
         Schema::dropIfExists('miembros_biblioteca');
     }
+    
 };
